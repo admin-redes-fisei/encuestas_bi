@@ -16,6 +16,10 @@ from sklearn.utils import shuffle
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/', methods=['GET'])
+def ping():
+    return jsonify({"response": "hello world"})
+
 @app.route('/calcular_regla', methods=['POST'])
 @cross_origin()
 def calcular_regla():
@@ -158,4 +162,4 @@ def generate_combinations(matrix):
     return new_matrix
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
