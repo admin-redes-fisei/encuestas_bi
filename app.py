@@ -21,10 +21,10 @@ def ping():
     try:
         response = requests.get('https://www.google.com', verify=False)
         print("Google Response Status Code:", response.status_code)
-        return jsonify({"response": "Google Response Status Code:"+response.status_code})
+        return jsonify({"response": "Google Response Status Code: " + str(response.status_code)})
     except requests.exceptions.RequestException as e:
         print("Request failed:", e)
-        return jsonify({"response": "Request failed:"+e})
+        return jsonify({"response": "Request failed: " + str(e)})
 
 @app.route('/calcular_regla', methods=['POST'])
 @cross_origin()
