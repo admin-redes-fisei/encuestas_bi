@@ -35,7 +35,13 @@ def calcular_regla():
 
     # Hacer una solicitud GET al archivo PHP
     try:
-        response = requests.get(f'https://hatunsoft.uta.edu.ec/encuestas/encuestas_back/obtenerDatasetApriori.php?formulario_id={formulario_id}', verify=False)
+        response = requests.get('https://www.google.com', verify=False)
+        print("Google Response Status Code:", response.status_code)
+    except requests.exceptions.RequestException as e:
+        print("Request failed:", e)
+
+    try:
+        response = requests.get(f'http://localhost/encuestas/encuestas_back/obtenerDatasetApriori.php?formulario_id={formulario_id}', verify=False)
         response.raise_for_status()
     except requests.exceptions.RequestException as e:
         return jsonify({'error': str(e)}), 500
