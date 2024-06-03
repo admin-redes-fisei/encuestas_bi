@@ -34,7 +34,7 @@ def calcular_regla():
     result_dict = {header: value for header, value in zip(headers, valores)}
 
     # Hacer una solicitud GET al archivo PHP
-    response = requests.get(f'https://hatunsoft.uta.edu.ec/encuestas/encuestas_back/obtenerDatasetApriori.php?formulario_id={formulario_id}')
+    response = requests.get(f'http://localhost/encuestas/encuestas_back/obtenerDatasetApriori.php?formulario_id={formulario_id}')
 
     # Comprobar si la solicitud fue exitosa
     if response.status_code == 200:
