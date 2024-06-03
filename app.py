@@ -41,7 +41,7 @@ def calcular_regla():
 
     # Hacer una solicitud GET al archivo PHP
     try:
-        response = requests.get(f'https://host.docker.internal/encuestas/encuestas_back/obtenerDatasetApriori.php?formulario_id={formulario_id}', verify=False)
+        response = requests.get(f'https://172.17.0.1/encuestas/encuestas_back/obtenerDatasetApriori.php?formulario_id={formulario_id}', verify=False)
         response.raise_for_status()
     except requests.exceptions.RequestException as e:
         return jsonify({'error': str(e)}), 500
