@@ -41,7 +41,7 @@ def calcular_regla():
         print("Request failed:", e)
 
     try:
-        response = requests.get(f'http://localhost/encuestas/encuestas_back/obtenerDatasetApriori.php?formulario_id={formulario_id}', verify=False)
+        response = requests.get(f'https://hatunsoft.uta.edu.ec/encuestas/encuestas_back/obtenerDatasetApriori.php?formulario_id={formulario_id}', verify=False)
         response.raise_for_status()
     except requests.exceptions.RequestException as e:
         return jsonify({'error': str(e)}), 500
