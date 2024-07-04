@@ -4,7 +4,7 @@
 * Servidor web Apache
 * Docker
 * GitHub
-* Base de datos MySQL (específicamente 'encuestasbd' en el servidor)
+* Base de datos MySQL (específicamente `encuestasdb` en el servidor)
 * Certificado de seguridad SSL
 * Servicios PHP en funcionamiento
 
